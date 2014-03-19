@@ -7,7 +7,7 @@ ProjectBlogRails::Application.routes.draw do
   post "update_settings/:id" => "user#update_settings"
   get "main/:id" => "user#main"
   get "compose/:id" => "post#compose"
-  post "save/:id" =>" post#save"
+  post "save/:id" =>"post#save"
   get "all_posts/:id" => "post#all_posts"
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,7 +2,7 @@ class UserController < ActionController::Base
   def login
   end
   def main
-    @user=User.find[params[:id]]
+    @user=User.find(params[:id]) 
   end
   
   def send_login #Ruby for login.html.erb
