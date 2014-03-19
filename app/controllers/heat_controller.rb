@@ -1,5 +1,5 @@
-class Heat < ActiveRecord::Base
-  s
+class Heat < ActiveController::Base
+  
   def self.build_coordinates
     d0=["CT","ME","MA","NH","RH","VT"]#ATL NE
     d1=["NJ","NY","PA"]#N ATL NE
