@@ -1,17 +1,17 @@
 
 <h1>Please Login To Blog</h1>
-<form method="post" action="/login">
+<form method="post" action="/send_login#find_user">
 <h10>User Name:</h10><input type="text" name="name">
-<h10>Password: </h10><input type="password" name="password">
+<h10>Password: </h10><input type="password" name="phraseofpass">
 <input type="submit" value="Login">
 </form>
 
 <h12><a href="/sign_up"> No Account?! Sign Up!</a></h12>
 <h1>Please Enter Your Information Below</h1>
-<form method="post" action="/new_user">
+<form method="post" action="/sign_up">
 <table>
 <tr><td><h10>User Name:</h10></td><td><input type="text" name="name"></td></tr>
-<tr><td><h10>Password: </10></td><td><input type="password" name="password"></td></tr>
+<tr><td><h10>Password: </10></td><td><input type="string" name="phraseofpass"></td></tr>
 <tr><td><h10>Location:</h10></td>
 <td>
 <select name="location" size="1">

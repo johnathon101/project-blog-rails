@@ -6,8 +6,9 @@ class PostController < ActionController::Base
   
   def save#Ruby for save.html.erb
     @user=User.find(params[:id])
-    @post=Post.new_post(@user.id, params[:title], params[:post])
-    #@user=User.where(:name => name, :password=>password).first
+    Post.create({:title=>params[:title],
+      :post=>params[:post],
+      :user_id=>@user.id})
   end
   
   def all_posts#Ruby for all_posts.html.erb

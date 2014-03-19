@@ -1,12 +1,12 @@
 ProjectBlogRails::Application.routes.draw do
-  post "sign_up" =>'user#sign_up'#Consolidate sign-up & user.create
-  post "login" =>'user#login'
-  get ""=>'user#login'
-  get "settings"=>'user#settings/:id'
-  get "main"=>'user#main/:id'
-  get "compose"=>"posts#compose/:id"
-  post "save"=>"posts#save/:id"
-  get "all_posts"=>"posts#all_posts/:id"
+  post "sign_up" => 'user#sign_up'#Cons olidate sign-up & user.create
+  get "login" => 'user#login'
+  post "send_login" => "user#find_user"
+  get "settings/:id" => "user#settings"
+  get "main/:id" => "user#main"
+  get "compose/:id" => "post#compose"
+  post "save/:id" =>" post#save"
+  get "all_posts/:id" => "post#all_posts"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
