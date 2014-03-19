@@ -1,9 +1,7 @@
-<head>
-<link href="<%= url('/mystyle.css') %>" rel="stylesheet" type="text/css" />
-</head>
+
 <h10>Change Your Information</h10>
 <table>
-<form method="post" action="/save_settings/<%= @user.id %>"><br>
+<form method="post" action="/update_settings/<%= @user.id %>"><br>
 <tr><td><h15>Name:</h15></td><td><input type="text" name="new_name" value=<%= @user.name %>></td></tr>
 <tr><td><h15>Location:</h15></td>
 <td><select name="new_location" size="1">
@@ -69,7 +67,7 @@
 	  <option value=5>Happy</option>
 	</select>
 </td></tr>
-<tr><td><h15>Password:</h15></td><td><input type="password" name="new_password"></td></tr>
+<tr><td><h15>Password:</h15></td><td><input type="string" name="phraseofpass"></td></tr>
 <input type=submit value="Send Data">
 </form>
 <h10><a href="/main/<%=@user.id%>> Go Home </a></h10>

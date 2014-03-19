@@ -1,8 +1,10 @@
 ProjectBlogRails::Application.routes.draw do
+
   post "sign_up" => 'user#sign_up'#Cons olidate sign-up & user.create
   get "login" => 'user#login'
   post "send_login" => "user#find_user"
-  get "settings/:id" => "user#settings"
+  get "settings/:id"=> "user#settings"
+  post "update_settings/:id" => "user#update_settings"
   get "main/:id" => "user#main"
   get "compose/:id" => "post#compose"
   post "save/:id" =>" post#save"

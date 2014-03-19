@@ -26,13 +26,18 @@ class UserController < ActionController::Base
       redirect_to "/main/#{@user.id}"
     end
     
-    def settings #Ruby for settings.html.erb
+    def settings
+      #render layout: "layout.html.erb"
+      @user=User.find(params[:id])
+    end
+    
+    def update_settings #Ruby for settings.html.erb
       @user=User.find(params[:id])
       @user.name=params[:new_name]
       @user.email=params[:new_email]
       @user.location=params[:new_location]
       @user.mood_pref=params[:new_mood_pref]
-      @user.password=params[:new_password]
+      @user.phraseofpass=params[:phraseofpass]
       redirect_to "/main/#{@user.id}"  
     end
 
