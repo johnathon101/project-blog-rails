@@ -1,5 +1,5 @@
 ProjectBlogRails::Application.routes.draw do
-
+  get "/home" => 'user#login'
   post "sign_up" => 'user#sign_up'#Cons olidate sign-up & user.create
   get "login" => 'user#login'
   post "send_login" => "user#find_user"
