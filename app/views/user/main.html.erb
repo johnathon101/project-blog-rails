@@ -1,4 +1,3 @@
-<body>
 
 <p><% Post.all.reverse.each do |post| %>
 	<% unless post.user_id == @user.id %>
@@ -10,4 +9,3 @@
 <p><h10><a href="/compose/<%= @user.id %>">Make a New Post!</a></h10></p>
 <p><h10><a href="/settings/<%=@user.id%>">Update Settings</a></h10></p>
 <p><h10><a href="/all_posts/<%= @user.id %>">All Posts(Including Yours!)</a></h10></p>
-</body>

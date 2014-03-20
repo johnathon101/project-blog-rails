@@ -1,4 +1,9 @@
+
+
 <head>
+<%= stylesheet_link_tag 'mystyle', :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 <h1><center>The Moody Bloogs</center></h1>
 <h2><center>A Small Experiment In Paragraph Connotation</center></h2>
 <h5><%= @user.name %>'s Page!<br>
