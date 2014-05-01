@@ -1,12 +1,15 @@
 class UserController < ApplicationController  
   def login
   end
+  
   def main
     @user=User.find(params[:id]) 
   end
   
   def send_login #Ruby for login.html.erb
-    @user= User.where(:email => params[:email])
+    email = params[:name].downcase
+    @user= User.where(:email => email).first
+    binding.pry
     if params[:phraseofpass] == @user.phraseofpass    
       session[:user_id] = @user.id
       redirect_to "/main/#{@user.id}"
@@ -16,14 +19,13 @@ class UserController < ApplicationController
   end
     
   def sign_up
-    User.create({
+    @user = User.create({
       :name=>params[:name],
       :phraseofpass=>params[:phraseofpass],
       :location=>params[:location],
       :mood_pref=>params[:mood_pref],
       :email=>params[:email]
       })
-      @user=User.where(:name=>params[:name], :phraseofpass=>params[:phraseofpass]).first
       redirect_to "/main/#{@user.id}"
     end
     
