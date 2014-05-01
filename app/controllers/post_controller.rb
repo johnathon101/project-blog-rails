@@ -1,4 +1,4 @@
-class PostController < ActionController::Base  
+class PostController < ApplicationController
 layout "application"
   def compose #Ruby for compose.html.erb
     @user=User.find(params[:id])

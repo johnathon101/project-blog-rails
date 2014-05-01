@@ -1,4 +1,4 @@
-class Heat < ActionController::Base
+class Heat < ApplicationController
   
   def self.build_coordinates
     d0=["CT","ME","MA","NH","RH","VT"]#ATL NE

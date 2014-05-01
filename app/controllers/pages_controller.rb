@@ -1,5 +1,4 @@
-class PagesController < ActionController::Base
-
+class PagesController < ApplicationController
   def login #Ruby for login.html.erb
     if User.where(:name=> params[:name]).first
         @user=User.login(params[:name],params[:password])
