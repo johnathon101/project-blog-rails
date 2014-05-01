@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UserController < ApplicationController  
   def login
   end
   def main
@@ -6,9 +6,10 @@ class UserController < ApplicationController
   end
   
   def send_login #Ruby for login.html.erb
-    if User.where(:name=> params[:name]).first
-        @user=User.login(params[:name],params[:phraseofpass])
-        redirect_to "/main/#{@user.id}"
+    @user= User.where(:email => params[:email])
+    if params[:phraseofpass] == @user.phraseofpass    
+      session[:user_id] = @user.id
+      redirect_to "/main/#{@user.id}"
     else
       redirect_to "/user#login"
     end

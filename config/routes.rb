@@ -2,7 +2,7 @@ ProjectBlogRails::Application.routes.draw do
   root :to => "user#login"
   post "sign_up" => 'user#sign_up'#Consolidate sign-up & user.create
   get "login" => 'user#login'
-  post "send_login" => "user#find_user"
+  post "send_login" => "user#send_login"
   get "update_settings/:id"=> "user#settings"
   post "update_settings/:id" => "user#update_settings"
   get "main/:id" => "user#main"

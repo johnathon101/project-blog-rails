@@ -6,15 +6,18 @@
 	<%= csrf_meta_tags %>
 <h1><center>The Moody Bloogs</center></h1>
 <h2><center>A Small Experiment In Paragraph Connotation</center></h2>
-<h5><%= @user.name %>'s Page!<br>
-<%= @user.location %><br>
-<%= @user.email %><br></h5>
-<center><table>
-<tr><td><p class="TopBar"><a href="/main/<%= @user.id%>">Home</a></td></p>
-<td><p class="TopBar"><a href="/compose/<%= @user.id %>">Compose</a></td></p>
-<td><p class="TopBar"><a href="/update_settings/<%= @user.id %>">Settings</a></p></td>
-<td><p class="TopBar"><a href="/all_posts/<%= @user.id %>">All Posts</b></a></p></tr>
-</table></center>
+<% if @user %>
+    <h5><%= @user.name %>'s Page!<br>
+    <%= @user.location %><br>
+    <%= @user.email %><br></h5>
+
+    <center><table>
+    <tr><td><div class="TopBar home"><a href="/main/<%= @user.id%>">Home</a></td></div>
+    <td><div class="TopBar compose"><a href="/compose/<%= @user.id %>">Compose</a></td></div>
+    <td><p class="TopBar settings"><a href="/update_settings/<%= @user.id %>">Settings</a></div></td>
+    <td><p class="TopBar posts"><a href="/all_posts/<%= @user.id %>">All Posts</b></a></div></tr>
+    </table></center>
+<%end%>
 </head>
 <body>
 <%= yield %>
